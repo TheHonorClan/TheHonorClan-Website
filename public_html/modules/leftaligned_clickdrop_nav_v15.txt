@@ -1,0 +1,286 @@
+
+<link type="text/css" rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"></link>
+
+
+<!-- CSS -->
+<script src="twitter-bootstrap-hover-dropdown.js"></script>
+<link href="bootstrap.min.css" rel="stylesheet">
+
+ 
+<style type="text/css">
+
+ /* Fix for profile info*/
+ 
+ .m_system-profile .profile-sidebar-block-community .community-info .label-info {
+    background-color: transparent !important;
+}
+ 
+
+/*Hides nav until loaded*/
+.navbar{
+display:none;
+top:0px;
+}
+
+
+
+/*Positioning of our logo*/
+.navbar-brand img{
+margin-right:15px;
+margin-left:30px;
+vertical-align:middle;
+}
+
+/*Non responsive hacks*/
+
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Always float the navbar header */
+.navbar-header {
+  float: left;
+}
+
+.nav-container{
+max-width: none !important;
+width: 970px;
+}
+
+/*End Non-Responsive Hacks*/
+
+ 
+
+ 
+/*Removes our likes etc.*/
+#enjin-bar #enjin-bar-likes{
+display:none !important;
+}
+ 
+
+ 
+ 
+  /* Fix for profile info*/
+ 
+ .m_system-profile .profile-sidebar-block-community .community-info .label-info {
+    background-color: transparent !important;
+}
+
+/*Fix for like button hover*/
+
+.dropdown-menu > li > a:hover > [class^="icon-"]{
+background-image:none !important;
+}
+
+/*hide left and right bar*/
+
+#enjin-bar .right,#enjin-bar{
+    display: none;
+}
+ 
+</style>
+ 
+
+ 
+
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="nav-container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><img src="http://themodulesource.com/bootstrap_for_enjin/logo.png">Project name</a>
+        </div>
+          <ul class="nav navbar-nav">
+            <li><a href="#"><i class="fa fa-plus-circle"></i>Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+<li class="dropdown" id="boot_username">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+<ul class="dropdown-menu">
+
+</ul>
+</li>
+          </ul>
+   
+      </div>
+    </div>
+
+<!--Profile dropdown script-->
+
+<script>
+$(window).bind("load", function() {
+var username=$('#enjin-bar span.element_username').text();
+var messages=$('#messages-notification-tip .inner').text();
+var notifications=$('#general-notification-tip .inner').text();
+var applications=$('#apps-notification-tip .inner').text();
+var points=$('.m_pointsdisplay .points-total').text();
+var adminstatus=$('#enjin-bar .left a[href$=\"/admin\"]').text();
+var enjinlikes=$('#enjin-bar #enjin-like-site .likes').text();
+
+
+
+
+//Username, guest, join, register and basic menu items
+
+if (username == ''){
+
+//What Guest sees
+$("#boot_username a").prepend("Guest <b class=\"caret\"></b>");
+
+$("#boot_username >.dropdown-menu").append("<li><a href=\"/login\" >Login</a></li>");
+
+$("#boot_username >.dropdown-menu").append("<li id=\"boot_register\"></li>");
+
+$('#enjin-bar a[href$="/register"]').prependTo($('#boot_register'));
+
+
+
+}
+
+else{
+
+
+$("#boot_username >a").prepend("Account<b class=\"caret\"></b>");
+
+$("#boot_username >a").prepend($("#enjin-bar .mini-avatar img"));
+
+$("#boot_username >.dropdown-menu").append("<li id=\"boot_join\"></li>");
+
+$('#enjin-bar .right .join-site a').prependTo($('#boot_join'));
+
+
+
+$("#boot_username >.dropdown-menu").append("<li><a href=\"/profile\" target=\"_blank\">Profile</a></li>");
+
+$("#boot_username >.dropdown-menu").append("<li><a href=\"/dashboard/settings\" target=\"_blank\">Account Settings</a></li>");
+
+$("#boot_username >.dropdown-menu").append("<li><a href=\"/dashboard/settings/website\" target=\"_blank\">Website Settings</a></li>");
+
+$("#boot_username >.dropdown-menu").append("<li id=\"boot_messages\"></li>");
+$("#boot_username >.dropdown-menu").append("<li id=\"boot_applications\"></li>");
+$("#boot_username >.dropdown-menu").append("<li id=\"boot_dashboard\"></li>");
+
+}
+
+
+
+
+
+//Messages display
+
+if (messages == ''){
+
+$("#boot_messages").append("<a href=\"/dashboard/messages\"><span class=\"badge label-success pull-right\">0</span> Messages</a>");
+}
+
+else{
+
+$("#boot_messages").append("<a href=\"/dashboard/messages\"><span class=\"badge label-success pull-right\">"+ messages +" </span> Messages</a>");
+}
+
+//Applications display
+
+if (applications == ''){
+
+$("#boot_applications").append("<a href=\"/dashboard/applications\"><span class=\"badge pull-right\">0</span> Applications</a>");
+}
+
+else{
+
+$("#boot_applications").append("<a href=\"/dashboard/applications\"><span class=\"badge pull-right\">"+ applications +" </span> Applications</a>");
+}
+
+//Notification count on dashboard link display
+
+if (notifications == ''){
+
+$("#boot_dashboard").append("<a href=\"/dashboard\"><span class=\"badge pull-right\">0</span> Dashboard</a>");
+
+}
+
+else{
+
+$("#boot_dashboard").append("<a href=\"/dashboard\" target=\"_blank\"><span class=\"badge pull-right\">"+ notifications +" </span> Dashboard</a>");
+}
+
+//Admin link display, admin only
+
+if (adminstatus == ''){}
+
+else{
+
+$("#boot_username >.dropdown-menu").append("<li><a href=\"/admin\">Admin</a></li>");
+
+}
+
+//Load like button
+
+if (username != ''){
+
+
+
+$("#boot_username >.dropdown-menu").append("<li class=\"divider\"></li>");
+$("#boot_username >.dropdown-menu").append("<li class=\"dropdown-header\">Enjin Popularity</li>");
+
+$("#boot_username >.dropdown-menu").append($("#enjin-like-site"));
+
+$("#boot_username >.dropdown-menu").append("<li class=\"divider\"></li>");
+$("#boot_username >.dropdown-menu").append("<li class=\"dropdown-header\">Account</li>");
+
+$("#boot_username >.dropdown-menu").append("<li><a href=\"/logout\">Logout</a></li>");
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+//Display username after scripts finish
+
+$( "#boot_username" ).show();
+
+});
+
+
+</script>
+
+ 
+ 
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="bootstrap.min.js"></script>
+
+<script> 
+$(document).ready(function(){ 
+$( ".navbar" ).prependTo($('body'));
+$( ".navbar" ).show();
+$( "#enjin-bar .right" ).show();
+}); 
+</script>
+
+
+
+
+ 
