@@ -5,65 +5,6 @@
         <script src="http://files.enjin.com/218889/bootstrap3/twitter-bootstrap-hover-dropdown.js"></script>
         <link href="http://files.enjin.com/218889/bootstrap3/bootstrap.min.css" rel="stylesheet">
         <style type="text/css">
-
-            /*Hides nav until loaded*/
-            .navbar{
-                display:none;
-                top:0px;
-            }
-
-            /*Positioning of our logo*/
-            .navbar-brand img{
-                margin-right:20px;
-                margin-left:20px;
-                vertical-align:center;
-
-            }
-
-            /*Skinny navbar*/
-
-            /*Set a minimum height for a nav*/
-            .navbar{
-                min-height:30px !important;
-                font-size:15px;
-            }
-
-            /*Change font size and padding of logo text*/
-            .navbar-brand{
-                font-size:15px !important;
-                padding-bottom:10px !important;
-                padding-top:10px !important;
-            }
-
-            /*Change our top level link padding*/
-            .navbar-nav > li > a {
-                padding-top: 10px !important;
-                padding-bottom: 10px !important;
-            }
-
-            /*Non responsive hacks*/
-
-            .container .navbar-header,
-            .container .navbar-collapse {
-                margin-right: 0;
-                margin-left: 0;
-            }
-
-            /* Always float the navbar header */
-            .navbar-header {
-                float: left;
-            }
-
-            /*Set the width to the width of your nav*/
-            .nav-container{
-                width:980px;
-                margin:0 auto;
-            }
-
-
-            /*End Non-Responsive Hacks*/
-
-
             /*Removes our likes etc.*/
             #enjin-bar #enjin-bar-likes{
                 display:none !important;
@@ -75,13 +16,26 @@
                 display: none;
             }
 
-            /*Fix for like button hover*/
+            #enjin-bar .left,#enjin-bar{
+                display: none;
+            }
+            
+            .navbar .navbar-nav {
+             display: inline-block;
+             float: none;
+}
 
-            .dropdown-menu > li > a:hover > [class^="icon-"]{
-                background-image:none !important;
+.navbar .navbar-collapse {
+  text-align: center;
+}         
+            
+            .navbar-nav > li {
+                width: 120px;
             }
 
-
+            #brandlistitem {
+                width: auto;
+            }
         </style>
 
     </head>
@@ -91,119 +45,35 @@
 
 
         <div class="navbar navbar-default navbar-fixed-top">
-            <div class="nav-container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#"><img src="">Honor Gaming Network</a>
-                </div>
+            <div class="container-fluid">
                 <ul class="nav navbar-nav">
-
-                    <li class="dropdown">
-
-                        <a class="dropdown-toggle" data-close-others="false" data-delay="300" data-hover="dropdown" data-toggle="dropdown" href="#">Network<b class="caret"></b></a>
-
-                        <ul class="dropdown-menu">
-
-                            <li class="dropdown-header">Active</li>
-                            <li><a href="http://thehonorclan.com/codhome">Call of Duty</a></li>
-                            <li class="dropdown-header">Under Construction</li>
-                            <li><a href="http://thehonorclan.com/wothome">World of Tanks</a></li>
-                            <li><a href="http://thehonorclan.com/minecrafthome">Minecraft</a></li>
-                            <li><a href="http://thehonorclan.com/destinyhome">Destiny</a></li>
-                            <li class="dropdown-header">Planning</li>
-                            <li><a href="http://thehonorclan.com/bfhome">Battlefield</a></li>
-                            <li><a href="http://thehonorclan.com/halohome">Halo</a></li>
-
-                        </ul>
-                    </li>            
-
-                    <li class="dropdown">
-
-                        <a class="dropdown-toggle" data-close-others="false" data-delay="300" data-hover="dropdown" data-toggle="dropdown" href="#">Game Zone<b class="caret"></b></a>
-
-                        <ul class="dropdown-menu">
-
-                            <li><a href="http://thehonorclan.com/chainofcommand">Chain of Command</a></li>
-                            <li><a href="http://thehonorclan.com/ranks">Ranks</a></li>
-                            <li><a href="http://thehonorclan.com/codeofconduct">Code of Conduct</a></li>
-                            <li><a href="http://thehonorclan.com/events">Events</a></li>
-                            <li><a href="http://thehonorclan.com/shop">Honor Store</a></li>
-                            <li><a href="http://thehonorclan.com/donations">Donate</a></li>
-                            <li><a href="http://thehonorclan.com/gallery">Gallery</a></li>
-
-                        </ul>
+                    <li>
+                        <a href="#"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRrUlICGNnCvamftl12hSs8waFCEZS2bK6LiFD2YDK-lo3avfYn" alt="Alternate text"></img></a>
                     </li>
 
-                    <li class="dropdown">
-
-                        <a class="dropdown-toggle" data-close-others="false" data-delay="300" data-hover="dropdown" data-toggle="dropdown" href="#">Clan Zone<b class="caret"></b></a>
-
-                        <ul class="dropdown-menu">
-
-                            <li class="dropdown-header">Xbox 360</li>
-                            <li><a href="my http link">Battlefield</a></li>
-                            <li><a href="my http link">Call of Duty</a></li>
-                            <li><a href="my http link">Halo</a></li>
-                            <li><a href="my http link">Destiny</a></li>
-                            <li class="dropdown-header">Xbox One</li>
-                            <li><a href="my http link">Call of Duty</a></li>
-                            <li><a href="my http link">Destiny</a></li>
-                            <li class="dropdown-header">PS3</li>
-                            <li><a href="my http link">Call of Duty</a></li>
-                            <li><a href="my http link">Destiny</a></li>
-
-
-                        </ul>
+                    <li>
+                        <a href="#"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRrUlICGNnCvamftl12hSs8waFCEZS2bK6LiFD2YDK-lo3avfYn" alt="Alternate text"></img></a>
                     </li>
-
-                    <li class="dropdown">
-
-                        <a class="dropdown-toggle" data-close-others="false" data-delay="300" data-hover="dropdown" data-toggle="dropdown" href="#">Join<b class="caret"></b></a>
-
-                        <ul class="dropdown-menu">
-
-                            <li class="dropdown-header">Xbox 360</li>
-                            <li><a href="http://thehonorclan.com/codrecruitmentgaming">BF Application</a></li>
-                            <li><a href="http://thehonorclan.com/codrecruitmentgaming">COD Application</a></li>
-                            <li><a href="http://thehonorclan.com/destinyrecruitmenttitans">Destiny Application</a></li>
-                            <li class="dropdown-header">Xbox One</li>
-                            <li><a href="http://thehonorclan.com/codrecruitmentascend">COD Application</a></li>
-                            <li><a href="http://thehonorclan.com/destinyrecruitmentHunters">Destiny Application</a></li>
-                            <li class="dropdown-header">Playstation 3</li>
-                            <li><a href="http://thehonorclan.com/codrecruitmentoutcasts">COD Application</a></li>
-                            <li class="dropdown-header">Playstation 4</li>
-                            <li><a href="http://thehonorclan.com/codrecruitmentoutlaws">COD Application</a></li>
-                            <li><a href="http://thehonorclan.com/destinyrecruitmentwarlocks">Destiny Application</a></li>
-                            <li class="dropdown-header">PC</li>
-                            <li><a href="http://thehonorclan.com/wotrecruitment">COD Application</a></li>
-
-
-                        </ul>
+                    
+                    <li>
+                        <a href="#"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRrUlICGNnCvamftl12hSs8waFCEZS2bK6LiFD2YDK-lo3avfYn" alt="Alternate text"></img></a>
                     </li>
-
-                    <li class="dropdown">
-
-                        <a class="dropdown-toggle" data-close-others="false" data-delay="300" data-hover="dropdown" data-toggle="dropdown" href="#">Forums<b class="caret"></b></a>
-
-                        <ul class="dropdown-menu">
-
-                            <li><a href="http://www.thehonorclan.com/forums/">Main Forums</a></li>
-
-                        </ul>
+                    
+                    <li id="brandlistitem">
+                        <a href="#"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRrUlICGNnCvamftl12hSs8waFCEZS2bK6LiFD2YDK-lo3avfYn" alt="Alternate text"></img></a>
                     </li>
-
-                    <li class="dropdown">
-
-                        <a class="dropdown-toggle" data-close-others="false" data-delay="300" data-hover="dropdown" data-toggle="dropdown" href="#">Support<b class="caret"></b></a>
-
-                        <ul class="dropdown-menu">
-
-                            <li><a href="my http link">Contact Council</a></li>
-                            <li><a href="my http link">Submit Ticket</a></li>
-
-                        </ul>
+                    
+                    <li>
+                        <a href="#"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRrUlICGNnCvamftl12hSs8waFCEZS2bK6LiFD2YDK-lo3avfYn" alt="Alternate text"></img></a>
                     </li>
-                </ul>
-
+                    
+                    <li>
+                        <a href="#"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRrUlICGNnCvamftl12hSs8waFCEZS2bK6LiFD2YDK-lo3avfYn" alt="Alternate text"></img></a>
+                    </li>
+                    
+                    <li>
+                        <a href="#"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRrUlICGNnCvamftl12hSs8waFCEZS2bK6LiFD2YDK-lo3avfYn" alt="Alternate text"></img></a>
+                    </li>
             </div>
         </div>
         <!-- Le javascript
