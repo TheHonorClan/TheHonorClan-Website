@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- CSS -->
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="http://files.enjin.com/218889/bootstrap3/bootstrap.min.js"></script>
+        <script src="http://files.enjin.com/218889/bootstrap3/twitter-bootstrap-hover-dropdown.js"></script>
+        <link href="http://files.enjin.com/218889/bootstrap3/bootstrap.min.css" rel="stylesheet">
+        <style type="text/css">
+            /*Removes our likes etc.*/
+            #enjin-bar #enjin-bar-likes,
+            #enjin-bar .right,#enjin-bar,
+            #enjin-bar .left,#enjin-bar,
+            #site-announcements,
+            #announcement-tooltip,
+            #enjin-tray
+            {
+                display:none !important;
+            }
+
+            .navbar-outer {
+                float:none;
+                display:inline-block;
+                vertical-align: middle;
+            }
+
+            .navbar-outer > .navbar {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .navbar {
+                width: 1000px;
+            }
+
+            .center.navbar .nav,
+            .center.navbar .nav > li {
+                float:none;
+                display:inline-block;
+                vertical-align: middle;
+            }
+
+            .center .center-inner {
+                text-align:center;
+                //margin-left: 250px;
+            }
+
+            .navbar-logo {
+                height: 150px;
+                width: auto;
+            }
+
+            #navbar-games {
+                background: transparent;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="custom-top navbar-outer navbar-fixed-top">
+            <nav class="navbar navbar-default center" role="navigation" id="navbar-games">
+                <div class="container-fluid">
+                    <div class="center-inner">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#"><img src="http://files.enjin.com/218889/assets/ha.png" alt="logo" class="navbar-logo"></a></li>
+                            <li><a href="#"><img src="http://files.enjin.com/218889/assets/bf4.png" alt="logo" class="navbar-logo"></a></li>
+                            <li><a href="#"><img src="http://files.enjin.com/218889/assets/logo.png" alt="logo" class="navbar-logo"></a></li>
+                            <li><a href="#"><img src="http://files.enjin.com/218889/assets/cod.png" alt="logo" class="navbar-logo"></a></li>
+                            <li><a href="#"><img src="http://files.enjin.com/218889/assets/tf.png" alt="logo" class="navbar-logo"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="filler" style="height: 200px;"></div>
+        <script>
+            $(document).ready(function() {
+                $("#filler").prependTo($('body'));
+                $(".custom-top").prependTo('body');
+            });
+        </script>
+    </body>
+</html>
+

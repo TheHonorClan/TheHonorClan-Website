@@ -5,5 +5,10 @@
         <group>
             <file>file:/C:/Users/Honor%20Buddha/Documents/NetBeansProjects/HTML5Application/public_html/index.html</file>
         </group>
+        <group name="HonorNetwork">
+            <file>file:/C:/Users/Jack/Documents/NetBeansProjects/Private/HonorNetwork/TheHonorClan-Website/public_html/profile/profile.html</file>
+            <file>file:/C:/Users/Jack/Documents/NetBeansProjects/Private/HonorNetwork/TheHonorClan-Website/public_html/navcarousel.html</file>
+            <file>file:/C:/Users/Jack/Documents/NetBeansProjects/Private/HonorNetwork/TheHonorClan-Website/public_html/codnavbar.html</file>
+        </group>
     </open-files>
 </project-private>

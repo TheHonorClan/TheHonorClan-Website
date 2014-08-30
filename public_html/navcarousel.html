@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        <script src="http://files.enjin.com/218889/carousel/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+        <script src="http://files.enjin.com/218889/carousel/allinone_carousel.js" type="text/javascript"></script>
+        <!--<script src="C:/Users/Jack/Documents/NetBeansProjects/Private/HonorNetwork/TheHonorClan-Website/public_html/js/allinone_carousel.js" type="text/javascript"></script>-->
+        <link href="http://files.enjin.com/218889/carousel/allinone_carousel.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+        <!-- must have -->
+
+        <style type="text/css">
+            /*Removes our likes etc.*/
+            #enjin-bar,
+            #enjin-bar #enjin-bar-likes,
+            #enjin-bar .right,#enjin-bar,
+            #enjin-bar .left,#enjin-bar
+            {
+                display:none !important;
+            }
+
+            .navbar-outer {
+                float:none;
+                display:inline-block;
+                vertical-align: middle;
+                width: 100%;
+            }
+
+            #allinone_carousel_powerful {
+                width: 1000px;
+            }
+
+            .navbar-outer > .navbar,
+            .navbar-outer > div {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="custom-top navbar-outer">
+            <div id="allinone_carousel_powerful">
+                <div class="myloader"></div>
+                <!-- CONTENT -->
+                <ul class="allinone_carousel_list">
+                    <li data-title=""><img src="http://files.enjin.com/218889/carousel/Logos/logo.png" alt=""></li>
+                    <li data-title=""><img src="http://files.enjin.com/218889/carousel/Logos/cod.png" alt=""></li>
+                    <li data-title=""><img src="http://files.enjin.com/218889/carousel/Logos/tf.png" alt=""></li>
+                    <li data-title=""><img src="http://files.enjin.com/218889/carousel/Logos/ha.png" alt=""></li>
+                    <li data-title=""><img src="http://files.enjin.com/218889/carousel/Logos/bf4.png" alt=""></li>
+                </ul>    
+            </div>  
+        </div>
+        <script>
+                $(document).ready(function() {
+                $('#allinone_carousel_powerful').allinone_carousel({
+                    skin: 'powerful',
+                    responsive: true,
+                    width: 1000,
+                    height: 200,
+                    contentWidth: "200px",
+                    contentHeight: "200px",
+                    elementsHorizontalSpacing: 80,
+                    elementsVerticalSpacing: 20,
+                    autoPlay: 0,
+                    resizeImages: true,
+                    autoHideBottomNav: true,
+                    showElementTitle: false,
+                    verticalAdjustment: 0,
+                    showPreviewThumbs: false,
+                    numberOfVisibleItems: 5,
+                    nextPrevMarginTop: 23,
+                    playMovieMarginTop: 0,
+                    absUrl: "http://files.enjin.com/218889/carousel/skins/",
+                    showCircleTimer: false,
+                    animationTime: .2,
+                });
+            });
+            $(document).ready(function() {
+                $(".custom-top").prependTo('body');
+            });
+        </script>
+    </body>
+</html>
+
