@@ -1,73 +1,145 @@
-<html>
-    <head>
+<html> 
+    <head> 
         <title>[name]'s Profile</title>
-        <style>
+        <!--<script src="http://code.jquery.com/jquery-latest.min.js"></script>-->
+        <style> 
             .profile {
-                height: 250px;
-                width: 700px;
+                background-color: #cccccc;
+                width: 750px;
             }
 
-            .profile 
-            .profile-pic,
-            .profile-pic img {
-                height: 150px;
-                width: 150px;
-                padding: 0px;
+            .profile:hover {
+                background-color: #bbb;
             }
 
-            .profile-row td {
-                height: 150px;
-            }
-
-            .box {
-                background-color: #0351f5;
-                border-radius: 5px;
-
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-            }
-
-            .under-pic {
-                margin-top: 5px;
-                margin-bottom: 5px;
-                padding-top: 5px;
-                padding-bottom: 5px;
-                height: 25px;
-            }
-
-            .media-image {
+            .profile-pic {
                 width: 100px;
                 height: 100px;
+            }
+
+            .profile td.left {
+                width: 200px;
+            }
+
+            .profile td.right {
+                width: 400px;
+            }
+
+            .extra {
+                display: none;
+            }
+
+            .profile-pic:hover .extra {
+                display: initial;
+            }
+
+            .extra {
+                z-index: 5;
+                position: absolute;
+                margin-top: 5px;
+                margin-left: -20px;
+            }
+
+            .extra > div {
+                display: none;
+            }
+
+            .extra > div.visible {
+                display: initial;
+            }
+
+            .extra-list {
+                background-color: #ccc;
+                padding: 10px !important;
+                list-style: none !important;
+                margin-top: 0px;
+            }
+
+            .caret {
+                display: inline-block;
+                width: 0px;
+                height: 0px;
+                margin-left: -4px;
+                vertical-align: middle;
+                border-top: 4px solid;
+                border-right: 4px solid transparent;
+                border-left: 4px solid transparent;
+                //border-bottom: 4px solid transparent;
+            }
+
+            .rank-image {
+                width: inherit;
+            }
+
+            .media-image { 
+                width: 55px; 
+                height: 55px; 
+            }
+
+            .centered {
+                display: inline-flex;
+                justify-content: space-around;
+                align-items: center;
+                width: inherit;
             }
         </style>
     </head>
     <body>
+        <script>
+            // TEMP
+            var current_session_user_id = "2639153";
+            var profileId = "3989586";
+        </script>
         <table class="profile">
-            <tr class="profile-row">
-                <td class="profile-pic"><img src="profpic.png" alt="profile picture"></td>
-                <td>
-                    <div class="box">
-                        <p>Name: [name]</p>
-                        <p>Age: [age]</p>
-                        <p>Country: [country]</p>
-                        <p>State: [state]</p>
+            <tr style="height: 95px;">
+                <td class="profile-pic outer" rowspan="2">
+                    <a class="prof-pic" href=""><img src="http://files.enjin.com/218889/Images/Player Logo's/Xbox 360/Honor Buddha.png" alt="profile picture" class="profile-pic"></a>
+                    <div class="extra">
+                        <button class="extra-button" style="width: 15px; height: 15px;"><span class="caret"></span></button>
+                        <div class="extra-list-container">
+                            <ul class="extra-list">
+                                <li onclick="addToFriends()">Add to friends</li>
+                                <li onclick="newMessage()">Send message</li>
+                            </ul>
+                        </div>
+                        <script>
+                            $().ready(function() {
+                                $(".prof-pic").attr('href', "http://thehonorclan.com/profile/" + profileId);
+                                $(".profile-pic.outer").on("mouseleave", function() {
+                                    $(this).find(".extra-list-container").removeClass("visible");
+                                });
+                                $(".extra-button").on ("click", function() {
+                                    var e = $(this).siblings(".extra-list-container");
+                                    e.toggleClass("visible");
+                                });
+                            });
+                            
+                            function newMessage() {
+                                var w = window.open("http://thehonorclan.com/dashboard/messages/compose/to/id-" + profileId);
+                            }
+
+                            function addToFriends() {
+                                $.ajax("/ajax.php?s=social_general&cmd=friend_add_remove&action=add&profile_id=" + current_session_user_id + "&user_id=" + profileId);
+                            }
+                        </script>
                     </div>
                 </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="box under-pic">[rank]</div>
-                    <div class="box under-pic">[profile]</div>
+                <td class="left">
+                    <img src="http://files.enjin.com/218889/Images/Ranks/generalofthearmy.png" alt="Rank" class="rank-image">
                 </td>
-                <td>   
-                    <img src="facebook.png" alt="facebook" class="media-image">
-                    <img src="twitter.png" alt="twitter" class="media-image">
-                    <img src="google.png" alt="googleplus" class="media-image">
-                    <img src="youtube.png" alt="youtube" class="media-image">
-                    <img src="skype.png" alt="skype" class="media-image">
+                <td class="right">
+                    <div class="centered">
+                        <img src="http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Facebook.png" alt="facebook" onmouseover="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Black&White/Facebook.png'" onmouseout="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Facebook.png'" class="media-image"> 
+                        <img src="http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Twitter.png" alt="twitter" onmouseover="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Black&White/Twitter.png'" onmouseout="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Twitter.png'" class="media-image"> 
+                        <img src="http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Github.png" onmouseover="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Black&White/Github.png'" onmouseout="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Github.png'" class="media-image"> 
+                        <img src="http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Youtube.png" alt="youtube" onmouseover="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Black&White/Youtube.png'" onmouseout="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Youtube.png'" class="media-image"> 
+                        <img src="http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Skype.png" alt="skype" onmouseover="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Black&White/Skype.png'" onmouseout="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Skype.png'" class="media-image"> 
+                        <img src="http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Twitch inv.jpg" alt="skype" onmouseover="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Black&White/Tiwtch inv.png'" onmouseout="this.src = 'http://files.enjin.com/218889/Buttons/[WS] Social Media/Color/Twitch inv.jpg'" class="media-image"> 
+                    </div>
                 </td>
-            </tr>
-        </table>
-    </body>
-</html>
+            </tr> 
+        </table> 
+    </body> 
+</html> 
+
+
