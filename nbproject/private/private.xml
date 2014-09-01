@@ -2,13 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Honor%20Buddha/Documents/NetBeansProjects/HTML5Application/public_html/index.html</file>
-        </group>
         <group name="HonorNetwork">
             <file>file:/C:/Users/Jack/Documents/NetBeansProjects/Private/HonorNetwork/TheHonorClan-Website/public_html/profile/profile.html</file>
             <file>file:/C:/Users/Jack/Documents/NetBeansProjects/Private/HonorNetwork/TheHonorClan-Website/public_html/navcarousel.html</file>
             <file>file:/C:/Users/Jack/Documents/NetBeansProjects/Private/HonorNetwork/TheHonorClan-Website/public_html/codnavbar.html</file>
+        </group>
+        <group>
+            <file>file:/C:/Users/Honor%20Buddha/Documents/NetBeansProjects/TheHonorClan/public_html/profile/profile.html</file>
         </group>
     </open-files>
 </project-private>
